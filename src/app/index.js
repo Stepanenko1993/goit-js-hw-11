@@ -15,7 +15,7 @@ const modalLightboxGallery = new SimpleLightbox('.gallery a', {
 spinnerPlay();
 
 window.addEventListener('load', () => {
-
+  
 
   spinnerStop();
 });
