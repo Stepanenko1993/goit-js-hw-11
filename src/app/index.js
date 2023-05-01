@@ -148,11 +148,6 @@ const onLoadMore = async () => {
   }
 };
 
-function clearPage() {
-  pixaby.resetPage();
-  refs.gallery.innerHTML = '';
-  refs.btnLoadMore.classList.add('is-hidden');
-}
 
 refs.form.addEventListener('submit', onSubmitClick);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
