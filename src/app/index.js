@@ -144,7 +144,7 @@ const onLoadMore = async () => {
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
-    clearPage();
+    
   }
 };
 
