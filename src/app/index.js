@@ -110,14 +110,14 @@ const onSubmitClick = async event => {
     Notify.success(`Hooray! We found ${total} images.`, notifyInit);
 
     if (pixaby.hasMorePhotos) {
-      //refs.btnLoadMore.classList.remove('is-hidden');
+      
 
       const lastItem = document.querySelector('.gallery a:last-child');
       observer.observe(lastItem);
     }
 
     modalLightboxGallery.refresh();
-    // scrollPage();
+   
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
@@ -144,10 +144,15 @@ const onLoadMore = async () => {
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
-    
+    clearPage();
   }
 };
 
+function clearPage() {
+  pixaby.resetPage();
+  refs.gallery.innerHTML = '';
+  refs.btnLoadMore.classList.add('is-hidden');
+}
 
 refs.form.addEventListener('submit', onSubmitClick);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
