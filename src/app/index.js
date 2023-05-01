@@ -59,7 +59,7 @@ const loadMorePhotos = async function (entries, observer) {
         scrollPage();
       } catch (error) {
         Notify.failure(error.message, 'Something went wrong!', notifyInit);
-        clearPage();
+        
       } finally {
         spinnerStop();
       }
@@ -79,7 +79,7 @@ const onSubmitClick = async event => {
   const search_query = searchQuery.value.trim().toLowerCase();
 
   if (!search_query) {
-    clearPage();
+    
     Notify.info('Enter data to search!', notifyInit);
 
     refs.searchInput.placeholder = 'What`re we looking for?';
@@ -88,7 +88,7 @@ const onSubmitClick = async event => {
 
   pixaby.query = search_query;
 
-  clearPage();
+  
 
   try {
     spinnerPlay();
@@ -144,12 +144,12 @@ const onLoadMore = async () => {
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
-    clearPage();
+  
   }
 };
 
 function clearPage() {
-  pixaby.resetPage();
+ 
   refs.gallery.innerHTML = '';
   refs.btnLoadMore.classList.add('is-hidden');
 }
