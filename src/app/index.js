@@ -121,7 +121,7 @@ const onSubmitClick = async event => {
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
-    clearPage();
+   
   } finally {
     spinnerStop();
   }
